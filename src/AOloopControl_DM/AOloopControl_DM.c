@@ -43,7 +43,6 @@
 #include "image_filter/image_filter.h"
 #include "image_gen/image_gen.h"
 
-
 #include "AOloopControl_DM/AOloopControl_DM.h"
 
 #ifdef __MACH__
@@ -64,6 +63,7 @@ int clock_gettime(int clk_id, struct mach_timespec *t){
 #else
 #include <time.h>
 #endif
+
 
 
 extern DATA data;

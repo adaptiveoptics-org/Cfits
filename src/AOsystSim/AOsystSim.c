@@ -1048,7 +1048,7 @@ int_fast8_t AOsystSim_extremeAO_contrast_sim()
 
     // initialization
     exaosimconf[0].lambda0 = 0.55e-6;
-    exaosimconf[0].lambdai = 1.6e-6;
+    exaosimconf[0].lambdai = 1.63e-6;
     exaosimconf[0].lambdawfs = 0.8e-6;
     exaosimconf[0].D = 30.0;
     exaosimconf[0].r0 = 0.15;
@@ -1083,11 +1083,16 @@ int_fast8_t AOsystSim_extremeAO_contrast_sim()
 
 
 // 8-m telescope
+    sourcemag_wfs = 8.0;
+    sourcemag_sci = 6.0;
 	exaosimconf[0].D = 8.0;
 	exaosimconf[0].windspeed = 8.0;
 	WFStlim = 0.002;
 
 // 30-m telescope
+	// M4 star at 5pc
+    sourcemag_wfs = 8.46;
+    sourcemag_sci = 6.33;
 	exaosimconf[0].D = 30.0;
 	exaosimconf[0].windspeed = 10.0;
 	WFStlim = 0.0002;
@@ -1126,8 +1131,7 @@ int_fast8_t AOsystSim_extremeAO_contrast_sim()
     zeroptWFSsci = zeropt_H;
     exaosimconf[0].lambdai = lambda_H;
 
-    sourcemag_wfs = 8.0;
-    sourcemag_sci = 6.0;
+
     exaosimconf[0].Fwfs = zeroptWFS*1.0e6*(exaosimconf[0].lambdawfs*lambdaBwfs)*pow(100.0, -0.2*sourcemag_wfs)*lambdaBwfs*systemEfficiency;
     exaosimconf[0].Fsci = zeroptWFSsci*1.0e6*(exaosimconf[0].lambdai*lambdaBsci)*pow(100.0, -0.2*sourcemag_sci)*lambdaBsci*systemEfficiency;
 

@@ -5,6 +5,7 @@
 m4_define([PROGNAME], cfitsTK)
 m4_define([PVERSION], 3.4.00)
 
+
 AC_INIT([PROGNAME], [PVERSION], [oliv.guyon@gmail.com], [PROGNAME])
 
 AC_PREREQ(2.61)
@@ -371,7 +372,8 @@ LIBS="$LIBS -lpthread"
 #	LIBS="$LIBS -lcuda -lcudart -lcufft"
 #fi
 
-AC_CONFIG_FILES(Makefile \
+
+AC_CONFIG_FILES([Makefile \
 src/Makefile \
 src/ImageStreamIO/Makefile \
 src/00CORE/Makefile \
@@ -411,10 +413,14 @@ src/AtmosphericTurbulence/Makefile \
 src/cudacomp/Makefile \
 src/SCExAO_control/Makefile \
 src/TransitLC/Makefile \
-src/linARfilterPred/Makefile)
+src/linARfilterPred/Makefile])
+
+#AC_CONFIG_FILES([Makefile])
 
 
 AC_OUTPUT
+
+
 
 echo ""
 echo "                       Configure Summary"
@@ -427,4 +433,6 @@ echo "                         CFLAGS: $CFLAGS"
 
 echo "                        LDFLAGS: $LDFLAGS"
 echo "                           LIBS: $LIBS"
+
+
 

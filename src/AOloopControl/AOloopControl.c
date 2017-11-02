@@ -2582,12 +2582,12 @@ int_fast8_t AOloopControl_WFSzeropoint_sum_update_loop(long loopnb, const char *
 
     schedpar.sched_priority = RT_priority;
 #ifndef __MACH__
-    if(seteuid(data.euid) != 0) //This goes up to maximum privileges
+    if(seteuid(data.euid) != 0) // This goes up to maximum privileges
         printERROR(__FILE__, __func__, __LINE__, "seteuid() returns non-zero value");
 
     sched_setscheduler(0, SCHED_FIFO, &schedpar); //other option is SCHED_RR, might be faster
 
-    if(seteuid(data.ruid) != 0) //Go back to normal privileges
+    if(seteuid(data.ruid) != 0) // Go back to normal privileges
        printERROR(__FILE__, __func__, __LINE__, "seteuid() returns non-zero value");
 #endif
 

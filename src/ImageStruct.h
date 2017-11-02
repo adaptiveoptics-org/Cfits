@@ -276,7 +276,7 @@ typedef struct
     double last_access;             /**< last time the image was accessed  (since process start)                      */
     // mem offset = 118
     
-    /** @brief Acquisition time (beginning of exposure   
+    /** @brief Acquisition time (beginning of exposure)   
      * 
      * atime is defined as a union to ensure fixed 16-byte length regardless of struct timespec implementation
      * 
